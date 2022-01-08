@@ -2,8 +2,8 @@ import React, { useEffect } from "react"
 import Split from "react-split"
 import Preview from "./Preview"
 import Sidebar from "./Sidebar"
-import Showdown from "showdown"
-import ReactMde from "react-mde"
+//import Showdown from "showdown"
+//import ReactMde from "react-mde"
 
 export default function Posts() {
     useEffect(()=>{
@@ -76,14 +76,14 @@ export default function Posts() {
        <main className="posts">
            <div className="post--buttons">
                 <button
-                        onClick={()=>setMakeNew(prevState => !prevState)}
-                >Go back</button>
+                        onClick={()=>setMakeNew(prevState => {
+                            if (prevState == true){
+                                prevState = !prevState
+                            }
+                        })}
+                >Homepage</button>
                 <button
-                        className="getPost"
-                        onClick={getPosts}
-                    >Get all post!</button>
-                <button
-                        className="makePost"
+                        className="post--buttons--makePost"
                         onClick={makePost}
                 >Make a post!</button>
            </div>
@@ -93,7 +93,7 @@ export default function Posts() {
 
     <div className="wrapper">
         <h1>Create a Post</h1>
-        <form>
+        <form className="posts--form">
             <input
                 type="text"
                 placeholder="Title"

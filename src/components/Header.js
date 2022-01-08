@@ -1,5 +1,4 @@
 import React from "react"
-import troll from "./troll-face.png" 
 import image from "./flower.png"
 export default function Header() {
     return (

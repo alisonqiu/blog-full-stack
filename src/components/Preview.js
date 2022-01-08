@@ -7,7 +7,7 @@ export default function Preview({currentPost}) {
            {
                currentPost?
                <div className="preview wrapper">
-                   <h1 className="preview--title">Title: {currentPost["title"]}</h1> 
+                   <h1 className="preview--title">{currentPost["title"]}</h1> 
                     <h4 className="preview--author">Author: {currentPost["username"]}</h4>
                     <p>{currentPost["content"]}</p>
                </div>
